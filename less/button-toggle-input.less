@@ -1,0 +1,74 @@
+//
+// Button toggle input
+// --------------------------------------------------
+
+// Core
+// --------------------------------------------------
+
+// Set the states
+input:checked + label.btn {
+  .btn.active;
+}
+input[disabled] + label.btn {
+  .btn.disabled;
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Provide *some* extra contrast for those who can get it
+input:checked + label.btn-primary,
+input:checked + label.btn-warning,
+input:checked + label.btn-danger,
+input:checked + label.btn-success,
+input:checked + label.btn-info,
+input:checked + label.btn-inverse{
+  .btn-primary.active;
+}
+
+// Set the backgrounds
+input:checked + label.btn-primary {
+  background-color: @btnPrimaryBackgroundHighlight;
+}
+// Warning appears are orange
+input:checked + label.btn-warning {
+  background-color: @btnWarningBackgroundHighlight;
+}
+// Danger and error appear as red
+input:checked + label.btn-danger {
+  background-color: @btnDangerBackgroundHighlight;
+}
+// Success appears as green
+input:checked + label.btn-success {
+  background-color: @btnSuccessBackgroundHighlight;
+}
+// Info appears as a neutral blue
+input:checked + label.btn-info {
+  background-color: @btnInfoBackgroundHighlight;
+}
+// Inverse appears as dark gray
+input:checked + label.btn-inverse {
+  background-color: @btnInverseBackgroundHighlight;
+}
+
+// Groups
+// --------------------------------------------------
+
+.btn-group > input {
+  display: none;
+}
+
+// Taken from button-groups -> .btn-group > .btn:first-child
+.btn-group > input:first-child + .btn {
+  margin-left: 0;
+  .border-top-left-radius(@baseBorderRadius);
+  .border-bottom-left-radius(@baseBorderRadius);
+}
+
+// Taken from button-groups -> .btn-group > .btn.large:first-child
+.btn-group > input:first-child + .btn.large {
+  margin-left: 0;
+  .border-top-left-radius(@borderRadiusLarge);
+  .border-bottom-left-radius(@borderRadiusLarge);
+}
+
